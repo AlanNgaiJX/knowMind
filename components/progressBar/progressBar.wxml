@@ -1,0 +1,9 @@
+<!--components/progressBar/progressBar.wxml-->
+<view class="progress-bar">
+  <view class="progress-bar-wrap" bind:tap="getProgressWidth">
+    <view class="progress-bar-content" style="width:{{value}}%;"></view>
+    <text class="progress-bar-text">
+      <slot></slot>
+    </text>
+  </view>
+</view>

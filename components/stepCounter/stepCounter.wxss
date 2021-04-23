@@ -1,0 +1,28 @@
+/* components/stepCounter/stepCounter.wxss */
+.step-counter{
+  display: flex;
+}
+
+.step-btn{
+  width: 50rpx;
+  height: 50rpx;
+  background-color: red;
+  display: flex;
+  justify-content: center;
+}
+
+.left-triangle{
+  width: 0;
+  height: 0;
+  border-top: 25rpx solid transparent;
+  border-right: 25rpx solid blue;
+  border-bottom: 25rpx solid transparent;
+}
+
+.back-btn{
+
+}
+
+.pre-btn{
+
+}
