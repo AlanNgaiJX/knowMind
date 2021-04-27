@@ -11,22 +11,25 @@
   justify-content: center;
 }
 
-.back-btn::before{
+.step-btn::before{
   content:"";
   display: block;
   width: 0;
   height: 0;
+}
+
+.back-btn::before{
   border-top: 25rpx solid transparent;
-  border-right: 25rpx solid blue;
+  border-right: 25rpx solid #1890FF;
   border-bottom: 25rpx solid transparent;
 }
 
 .pre-btn::before{
-  content:"";
-  display: block;
-  width: 0;
-  height: 0;
   border-top: 25rpx solid transparent;
-  border-left: 25rpx solid blue;
+  border-left: 25rpx solid #1890FF;
   border-bottom: 25rpx solid transparent;
+}
+
+.pre-btn.disable::before{
+  border-left: 25rpx solid #eeeeee;
 }

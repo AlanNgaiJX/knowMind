@@ -12,7 +12,7 @@
 
 .progress-bar-content{
   position: absolute;
-  background-color: blue;
+  background-color: #1890FF;
   height: 100%;
   border-top-right-radius: 20rpx;
   border-bottom-right-radius: 20rpx;

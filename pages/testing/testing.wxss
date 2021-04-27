@@ -8,7 +8,6 @@
 }
 
 .swiper-item{
-  border: 1rpx solid black;
   box-sizing: border-box;
   padding: 60rpx;
 }
@@ -41,6 +40,12 @@
 }
 
 .answer-item.selected{
-    color: #409eff;
-    border: 1px solid #409eff;
+    color: #1890FF;
+    border: 1px solid #1890FF;
+}
+
+.step-counter-wrap{
+  display: flex;
+  justify-content: center;
+  margin-top: 30rpx;
 }

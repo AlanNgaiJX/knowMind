@@ -4,6 +4,6 @@
   </view>
   <progress-bar value="{{progressValue}}" content="{{currStep + '/' + stepLength}}">
   </progress-bar>
-  <view class="step-btn pre-btn" catch:tap="currStepchange" data-type="add">
+  <view class="step-btn pre-btn {{disablePre ? 'disable':''}}" catch:tap="currStepchange" data-type="add">
   </view>
 </view>

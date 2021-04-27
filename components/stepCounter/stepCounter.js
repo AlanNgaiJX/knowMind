@@ -11,6 +11,10 @@ Component({
     currStep: {
       type: Number,
       value: 1
+    },
+    disablePre:{
+      type: Boolean,
+      value: false
     }
   },
   data: {
