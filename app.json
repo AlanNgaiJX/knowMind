@@ -1,7 +1,10 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/test/test"
+    "pages/test/test",
+    "pages/testList/testList",
+    "pages/testIntro/testIntro",
+    "pages/testing/testing"
   ],
   "window": {
     "backgroundTextStyle": "light",

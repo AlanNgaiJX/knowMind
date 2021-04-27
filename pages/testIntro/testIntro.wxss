@@ -1,0 +1,13 @@
+/* pages/testIntro/testIntro.wxss */
+.page-testIntro{
+}
+
+.intro-banner{
+  display: flex;
+  justify-content: center;
+  margin-top: 30rpx;
+}
+
+.banner-image{
+  width: 90%;
+}

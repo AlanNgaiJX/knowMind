@@ -1,0 +1,8 @@
+<!--pages/testList/testList.wxml-->
+<view class="page-testList">
+  <view class="test-list">
+    <view class="test-item">
+      <image mode="widthFix" lazy-load="true" class="thumb-image" src="https://alanngaijx.xyz/assets/know-mind/main-thumbnail/personalColorCN-thumb.png"></image>
+    </view>
+  </view>
+</view>

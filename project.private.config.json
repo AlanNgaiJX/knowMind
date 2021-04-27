@@ -17,6 +17,23 @@
           "pathName": "pages/test/test",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "pages/testList/testList",
+          "pathName": "pages/testList/testList",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/testIntro/testIntro",
+          "pathName": "pages/testIntro/testIntro",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/testing/testing",
+          "pathName": "pages/testing/testing",
+          "scene": null
         }
       ]
     }

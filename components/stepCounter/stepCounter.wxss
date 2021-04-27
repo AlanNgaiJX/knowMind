@@ -1,17 +1,19 @@
 /* components/stepCounter/stepCounter.wxss */
 .step-counter{
   display: flex;
+  align-items: center;
 }
 
 .step-btn{
   width: 50rpx;
   height: 50rpx;
-  background-color: red;
   display: flex;
   justify-content: center;
 }
 
-.left-triangle{
+.back-btn::before{
+  content:"";
+  display: block;
   width: 0;
   height: 0;
   border-top: 25rpx solid transparent;
@@ -19,10 +21,12 @@
   border-bottom: 25rpx solid transparent;
 }
 
-.back-btn{
-
-}
-
-.pre-btn{
-
+.pre-btn::before{
+  content:"";
+  display: block;
+  width: 0;
+  height: 0;
+  border-top: 25rpx solid transparent;
+  border-left: 25rpx solid blue;
+  border-bottom: 25rpx solid transparent;
 }

@@ -1,0 +1,19 @@
+<!--pages/testing/testing.wxml-->
+<view class="page-testing container">
+  <swiper class="swiper" current="{{currStep - 1}}">
+    <block wx:for="{{questions}}" wx:for-item="questionItem" wx:for-index="questionIndex" wx:key="*this">
+      <swiper-item class="swiper-item">
+        <view class="question">
+          <text>{{questionIndex+1+'. '}}</text>{{questionItem.question}}
+        </view>
+        <view class="answers-list">
+          <view class="answer-item {{answerItem.selected ? 'selected' : ''}}" wx:for="{{questionItem.answers}}"
+            wx:for-item="answerItem" wx:for-index="answerIndex" wx:key="*this">
+            <text>{{answerItem.content}}</text>
+          </view>
+        </view>
+      </swiper-item>
+    </block>
+  </swiper>
+  <step-counter stepLength="{{questions.length}}" currStep="{{currStep}}" bind:add="next" bind:sub="back"></step-counter>
+</view>

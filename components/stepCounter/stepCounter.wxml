@@ -1,8 +1,9 @@
 <!--components/stepCounter/stepCounter.wxml-->
 <view class="step-counter">
-  <view class="step-btn back-btn">
-    <view class="left-triangle"></view>
+  <view class="step-btn back-btn" catch:tap="currStepchange" data-type="sub">
   </view>
-  <progress-bar value="{{progressValue}}">{{currStep}}/{{stepLength}}</progress-bar>
-  <view class="step-btn pre-btn"></view>
+  <progress-bar value="{{progressValue}}" content="{{currStep + '/' + stepLength}}">
+  </progress-bar>
+  <view class="step-btn pre-btn" catch:tap="currStepchange" data-type="add">
+  </view>
 </view>

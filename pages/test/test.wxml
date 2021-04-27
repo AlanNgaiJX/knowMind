@@ -1,5 +1,5 @@
 <!--pages/test/test.wxml-->
 <view>
   <text>test page</text>
-  <step-counter></step-counter>
+  <step-counter stepLength="{{stepLength}}" currStep="{{currStep}}" bind:add="add" bind:sub="sub"></step-counter>
 </view>

@@ -3,7 +3,7 @@
 .progress-bar-wrap{
   position: relative;
   background-color: #eeeeee;
-  border: 1px solid #999999;
+  border: 1rpx solid #999999;
   width: 350rpx;
   height: 50rpx;
   border-radius: 100rpx;
@@ -13,7 +13,6 @@
 .progress-bar-content{
   position: absolute;
   background-color: blue;
-  width: 50%;
   height: 100%;
   border-top-right-radius: 20rpx;
   border-bottom-right-radius: 20rpx;
