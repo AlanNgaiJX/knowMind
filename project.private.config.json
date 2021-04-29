@@ -33,6 +33,13 @@
         {
           "name": "pages/testing/testing",
           "pathName": "pages/testing/testing",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/testResult/testResult",
+          "pathName": "pages/testResult/testResult",
+          "query": "resultImage=https://alanngaijx.xyz/assets/know-mind/resultImages/personalColorCN/ISTJ.png",
           "scene": null
         }
       ]

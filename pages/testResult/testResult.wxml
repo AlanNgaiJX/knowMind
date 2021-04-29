@@ -1,0 +1,4 @@
+<!--pages/testResult/testResult.wxml-->
+<view class="page-testResult">
+  <image class="result-image" mode="widthFix" src="{{imageSrc}}"></image>
+</view>

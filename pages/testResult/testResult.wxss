@@ -1,0 +1,10 @@
+/* pages/testResult/testResult.wxss */
+.page-testResult{
+  display: flex;
+  justify-content: center;
+  padding: 60rpx;
+}
+
+.result-image{
+
+}

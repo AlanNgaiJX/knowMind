@@ -1,13 +1,39 @@
+function range(start, stop, step) {
+  if (typeof stop == 'undefined') {
+      // one param defined
+      stop = start;
+      start = 0;
+  }
+
+  if (typeof step == 'undefined') {
+      step = 1;
+  }
+
+  if ((step > 0 && start >= stop) || (step < 0 && start <= stop)) {
+      return [];
+  }
+
+  var result = [];
+  for (var i = start; step > 0 ? i < stop : i > stop; i += step) {
+      result.push(i);
+  }
+
+  return result;
+};
+
+const sourceHost = "https://alanngaijx.xyz/assets/know-mind";
+
 const Test = [
   // persoanlColor in Chinese
   {
+    id:"1",
     info: {
       mainTitle: "颜色心理测试性格篇",
       subTitle: "最适合我的颜色是什么？ K测试 你的颜色是？",
       mainUrl: "personalColorCN",
       scoreType: "typeCountingMBTI",
-      mainImage: "https://images.ktestone.com/introImages/personalColorCN-intro.png",
-      thumbImage: "https://images.ktestone.com/main-thumbnail/personalColorCN-thumb.png"
+      mainImage: `${sourceHost}/introImages/personalColorCN-intro.png`,
+      thumbImage: `${sourceHost}/main-thumbnail/personalColorCN-thumb.png`
     },
     questions: [{
         which: "EI",
@@ -194,99 +220,101 @@ const Test = [
         type: "ESTJ",
         query: "ESTJ",
         score_range: range(26),
-        img_src: 'https://images.ktestone.com/resultImages/personalColorCN/ESTJ.png'
+        img_src: `${sourceHost}/resultImages/personalColorCN/ESTJ.png`
       },
       {
         type: "ESTP",
         query: "ESTP",
         score_range: range(26, 51),
-        img_src: 'https://images.ktestone.com/resultImages/personalColorCN/ESTP.png'
+        img_src: `${sourceHost}/resultImages/personalColorCN/ESTP.png`
       },
       {
         type: "ESFJ",
         desc: `도비가 부러운 자유로운 영혼인, 웰시코기\n`,
         query: "ESFJ",
         score_range: range(51, 75),
-        img_src: 'https://images.ktestone.com/resultImages/personalColorCN/ESFJ.png'
+        img_src: `${sourceHost}/resultImages/personalColorCN/ESFJ.png`
       },
       {
         type: "ESFP",
         query: "ESFP",
         score_range: range(76, 101),
-        img_src: 'https://images.ktestone.com/resultImages/personalColorCN/ESFP.png'
+        img_src: `${sourceHost}/resultImages/personalColorCN/ESFP.png`
       },
       {
         type: "ENTJ",
         query: "ENTJ",
         score_range: range(76, 101),
-        img_src: 'https://images.ktestone.com/resultImages/personalColorCN/ENTJ.png'
+        img_src: `${sourceHost}/resultImages/personalColorCN/ENTJ.png`
       },
       {
         type: "ENTP",
         query: "ENTP",
         score_range: range(26),
-        img_src: 'https://images.ktestone.com/resultImages/personalColorCN/ENTP.png'
+        img_src: `${sourceHost}/resultImages/personalColorCN/ENTP.png`
       },
       {
         type: "ENFJ",
         query: "ENFJ",
         score_range: range(26, 51),
-        img_src: 'https://images.ktestone.com/resultImages/personalColorCN/ENFJ.png'
+        img_src: `${sourceHost}/resultImages/personalColorCN/ENFJ.png`
       },
       {
         type: "ENFP",
         query: "ENFP",
         score_range: range(51, 75),
-        img_src: 'https://images.ktestone.com/resultImages/personalColorCN/ENFP.png'
+        img_src: `${sourceHost}/resultImages/personalColorCN/ENFP.png`
       },
       {
         type: "ISTJ",
         query: "ISTJ",
         score_range: range(76, 101),
-        img_src: 'https://images.ktestone.com/resultImages/personalColorCN/ISTJ.png'
+        img_src: `${sourceHost}/resultImages/personalColorCN/ISTJ.png`
       },
       {
         type: "ISTP",
         query: "ISTP",
         score_range: range(76, 101),
-        img_src: 'https://images.ktestone.com/resultImages/personalColorCN/ISTP.png'
+        img_src: `${sourceHost}/resultImages/personalColorCN/ISTP.png`
       },
       {
         type: "ISFJ",
         query: "ISFJ",
         score_range: range(76, 101),
-        img_src: 'https://images.ktestone.com/resultImages/personalColorCN/ISFJ.png'
+        img_src: `${sourceHost}/resultImages/personalColorCN/ISFJ.png`
       },
       {
         type: "ISFP",
         query: "ISFP",
         score_range: range(26),
-        img_src: 'https://images.ktestone.com/resultImages/personalColorCN/ISFP.png'
+        img_src: `${sourceHost}/resultImages/personalColorCN/ISFP.png`
       },
       {
         type: "INTJ",
         query: "INTJ",
         score_range: range(26, 51),
-        img_src: 'https://images.ktestone.com/resultImages/personalColorCN/INTJ.png'
+        img_src: `${sourceHost}/resultImages/personalColorCN/INTJ.png`
       },
       {
         type: "INTP",
         query: "INTP",
         score_range: range(51, 75),
-        img_src: 'https://images.ktestone.com/resultImages/personalColorCN/INTP.png'
+        img_src: `${sourceHost}/resultImages/personalColorCN/INTP.png`
       },
       {
         type: "INFJ",
         query: "INFJ",
         score_range: range(76, 101),
-        img_src: 'https://images.ktestone.com/resultImages/personalColorCN/INFJ.png'
+        img_src: `${sourceHost}/resultImages/personalColorCN/INFJ.png`
       },
       {
         type: "INFP",
         query: "INFP",
         score_range: range(76, 101),
-        img_src: 'https://images.ktestone.com/resultImages/personalColorCN/INFP.png'
+        img_src: `${sourceHost}/resultImages/personalColorCN/INFP.png`
       },
     ]
   }
 ]
+
+module.exports = Test;

@@ -49,3 +49,41 @@
   justify-content: center;
   margin-top: 30rpx;
 }
+
+.submit-wrap{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30rpx;
+}
+
+@keyframes scaleOutIn{
+  0%{
+    transform: scale(1);
+  }
+
+  50%{
+    transform: scale(1.2);
+  }
+
+  100%{
+    transform: scale(1);
+  }
+}
+
+.btn-submit{
+  background-color: #1890FF;
+  width: 450rpx;
+  height: 80rpx;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50rpx;
+  font-size: 32rpx;
+  animation-name: scaleOutIn;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  transform-origin: center;
+  letter-spacing: 3rpx;
+}

@@ -1,4 +1,9 @@
 // pages/testing/testing.js
+const TEST = require("../../config/TEST.js");
+const {
+  deepCopy
+} = require("../../utils/util.js");
+
 Page({
 
   /**
@@ -7,7 +12,9 @@ Page({
   data: {
     currStep: 1, // 当前步骤
     overStep: 1, // 已经过的步骤
-    stepLength: 0,// 总步数，未初始化为0
+    testEnd: false,
+    stepLength: 0, // 总步数，未初始化为0
+    scoreType: "typeCountingMBTI",
     questions: [{
         which: "EI",
         question: '初次结识的朋友面前我是？',
@@ -228,6 +235,9 @@ Page({
   next() {
     const step = this.data.currStep + 1;
     if (step > this.data.stepLength) {
+      this.setData({
+        testEnd: true
+      })
       return false;
     }
 
@@ -286,12 +296,81 @@ Page({
     })
     this.next();
   },
+
+  getResult(){
+    const result = this.resultCaculator();
+    console.log(result);
+    wx.navigateTo({
+      url: `/pages/testResult/testResult?resultImage=${result.img_src}`
+    })
+  },
+
+  resultCaculator() {
+    if (this.data.scoreType === "typeCountingMBTI") {
+      const final_result_obj = this.data.answer_type_obj;
+
+      // for creating an array which contains VS between types ex.["EI", "SN", "TF", "JP"]
+      const _which_type_arr = this.data.questions.map((item) => {
+        return item.which
+      }).filter((value, index, self) => {
+        return self.indexOf(value) === index;
+      });
+
+      // get max value & type from Each VS
+      let final_type = '';
+      _which_type_arr.forEach(item => {
+        const first_type = item[0]
+        const second_type = item[1]
+        const type_arr = [first_type, second_type]
+        let max_val = 0
+        // for split in case of odd | even questions in the same which(ex. EI/SN..)
+        if (final_result_obj[first_type] !== final_result_obj[second_type]) {
+          max_val = Math.max(final_result_obj[first_type], final_result_obj[second_type])
+          type_arr.filter(item => final_result_obj[item] === max_val).forEach(item => final_type += item)
+        } else {
+          final_type += type_arr[0]
+        }
+      })
+
+      // return 'THE' result TYPE from TESTS.js
+      for (let i = 0; i < this.data.results.length; i++) {
+        if (final_type === this.data.results[i].type) {
+          return this.data.results[i]
+        }
+      }
+    }
+
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    const testId = "1";
+    const currTest = deepCopy(TEST.find((item => item.id === testId)));
+
+    // 加 selected 标记
+    currTest.questions.forEach(qItem => {
+      qItem.answers.forEach(item => {
+        item.selected = false;
+      })
+    });
+
+    // 初始化得分表
+    // create answer option object for counting each question's answer
+    let _answer_type_obj = {};
+    for (let i = 0; i < currTest.questions.length; i++) {
+      for (let j = 0; j < currTest.questions[j].answers.length; j++) {
+        _answer_type_obj[currTest.questions[i].answers[j].type] = 0;
+      }
+    }
+
     this.setData({
-      stepLength: this.data.questions.length
+      stepLength: currTest.questions.length,
+      scoreType: currTest.info.scoreType,
+      questions: currTest.questions,
+      answer_type_obj: _answer_type_obj,
+      results: currTest.results
     })
   },
 
@@ -299,48 +378,6 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
 
   }
 })

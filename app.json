@@ -4,7 +4,8 @@
     "pages/test/test",
     "pages/testList/testList",
     "pages/testIntro/testIntro",
-    "pages/testing/testing"
+    "pages/testing/testing",
+    "pages/testResult/testResult"
   ],
   "window": {
     "backgroundTextStyle": "light",
