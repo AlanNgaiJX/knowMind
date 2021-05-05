@@ -1,0 +1,9 @@
+<!--pages/poster/poster.wxml-->
+<view class="container">
+  <button open-type="getUserInfo" bind:tap="getUserInfo">click here</button>
+  <button bind:tap="extraImage">extraImage</button>
+  <image mode="widthFix" src="{{src}}" width="562"></image>
+  <view class="vmse-wtc">
+    <wxml-to-canvas class="widget" width="562" height="1021"></wxml-to-canvas>
+  </view>
+</view>

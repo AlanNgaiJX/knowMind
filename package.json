@@ -5,7 +5,8 @@
   "main": "app.js",
   "dependencies": {
     "docxtemplater": "^3.21.1",
-    "miniprogram-computed": "^4.0.4"
+    "miniprogram-computed": "^4.0.4",
+    "wxml-to-canvas": "^1.0.1"
   },
   "devDependencies": {},
   "scripts": {

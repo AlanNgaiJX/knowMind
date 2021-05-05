@@ -41,6 +41,11 @@
           "pathName": "pages/testResult/testResult",
           "query": "resultImage=https://alanngaijx.xyz/assets/know-mind/resultImages/personalColorCN/ISTJ.png",
           "scene": null
+        },
+        {
+          "name": "pages/poster/poster",
+          "pathName": "pages/poster/poster",
+          "scene": null
         }
       ]
     }
