@@ -1,3 +1,6 @@
+const config = require("./index.js");
+const sourceHost = config.sourceHost;
+
 function range(start, stop, step) {
   if (typeof stop == 'undefined') {
       // one param defined
@@ -20,8 +23,6 @@ function range(start, stop, step) {
 
   return result;
 };
-
-const sourceHost = "https://alanngaijx.xyz/assets/know-mind";
 
 const Test = [
   // persoanlColor in Chinese

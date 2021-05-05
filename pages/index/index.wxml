@@ -1,2 +1,15 @@
 <!--pages/index/index.wxml-->
-<view>index</view>
+<view class="page-index">
+  <swiper class="swiper" current="{{current}}">
+    <block wx:for="{{tests}}" wx:for-item="testItem" wx:for-index="testIndex" wx:key="*this">
+      <swiper-item class="swiper-item">
+        <image src="{{testItem.coverUrl}}" mode="widthFix" class="coverImage"></image>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="options-pannel">
+    <view class="btn-start">
+      开始测试
+    </view>
+  </view>
+</view>

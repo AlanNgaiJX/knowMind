@@ -1,11 +1,17 @@
 // pages/index/index.js
+const config = require("../../config/index.js");
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    tests:[
+      {
+        id: 1,
+        coverUrl: config.sourceHost + "/assets/colorTestWelcome.png"
+      }
+    ]
   },
 
   /**

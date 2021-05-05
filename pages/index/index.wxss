@@ -1,1 +1,39 @@
 /* pages/index/index.wxss */
+.page-index{
+  padding-top: 60rpx;
+  height: 100vh;
+  background-color: #FFFAF7;
+}
+
+.swiper{
+  height: 844rpx;
+  /* background-color: pink; */
+}
+
+.swiper-item{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.coverImage{
+  width: 690rpx;
+}
+
+.options-pannel{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 55rpx;
+}
+
+.btn-start{
+  width: 210rpx;
+  height: 101rpx;
+  background: url("https://alanngai1996.xyz/store/know-mind/assets/btn-3d-pink.png") no-repeat center;
+  background-size: contain;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28rpx;
+}
