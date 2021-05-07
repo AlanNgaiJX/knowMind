@@ -33,7 +33,7 @@
         {
           "name": "pages/testing/testing",
           "pathName": "pages/testing/testing",
-          "query": "",
+          "query": "testId=1",
           "scene": null
         },
         {
@@ -45,6 +45,7 @@
         {
           "name": "pages/poster/poster",
           "pathName": "pages/poster/poster",
+          "query": "",
           "scene": null
         }
       ]

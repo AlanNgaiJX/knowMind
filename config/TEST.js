@@ -31,10 +31,9 @@ const Test = [
     info: {
       mainTitle: "颜色心理测试性格篇",
       subTitle: "最适合我的颜色是什么？ K测试 你的颜色是？",
-      mainUrl: "personalColorCN",
+      coverUrl: sourceHost + "/assets/colorTestWelcome.png",
       scoreType: "typeCountingMBTI",
-      mainImage: `${sourceHost}/introImages/personalColorCN-intro.png`,
-      thumbImage: `${sourceHost}/main-thumbnail/personalColorCN-thumb.png`
+      canStart: true
     },
     questions: [{
         which: "EI",

@@ -1,17 +1,21 @@
 // pages/index/index.js
 const config = require("../../config/index.js");
+const TEST = require("../../config/TEST");
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    tests:[
-      {
-        id: 1,
-        coverUrl: config.sourceHost + "/assets/colorTestWelcome.png"
-      }
-    ]
+    current: 0,
+    tests:TEST
+  },
+
+  startTest(){
+    const testId = this.data.tests[this.data.current].id;
+    wx.navigateTo({
+      url: `/pages/testing/testing?testId=${testId}`,
+    })
   },
 
   /**

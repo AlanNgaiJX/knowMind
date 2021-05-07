@@ -1,8 +1,6 @@
 /* pages/index/index.wxss */
 .page-index{
   padding-top: 60rpx;
-  height: 100vh;
-  background-color: #FFFAF7;
 }
 
 .swiper{
@@ -36,4 +34,7 @@
   justify-content: center;
   align-items: center;
   font-size: 28rpx;
+  animation-name: scaleOutIn;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
 }
