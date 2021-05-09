@@ -8,3 +8,6 @@
   position: absolute;
   left: -10000rpx;
 }
+.btn-group{
+  display: flex;
+}

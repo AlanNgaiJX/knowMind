@@ -1,7 +1,7 @@
 export const getWxml = (avatar, qr) => {
   return `
   <view class="container">
-    <image class="bg" src="https://muc0901.oss-cn-shenzhen.aliyuncs.com/common/wxmini/mt_share_bg.png"></image>
+    <image class="bg" src="https://alanngai1996.xyz/store/know-mind/resultImages/personalColor/ENFJ.png"></image>
     <image class="avatar"  src="${avatar}"></image>
     <image class="qr" src="${qr}" ></image>
   </view>
@@ -19,19 +19,19 @@ export const style = {
     height: 1021,
   },
   avatar: {
-    width: 125,
-    height: 125,
-    borderRadius: 13,
+    width: 100,
+    height: 100,
+    borderRadius: 20,
     position: "absolute",
-    left: 36,
-    bottom: 27
+    left: 60,
+    top: 162
   },
   qr: {
-    borderRadius: 66,
+    borderRadius: 20,
     position: 'absolute',
-    right: 41,
-    bottom: 27,
-    width: 133,
-    height: 133,
+    width: 88.5,
+    height: 88.5,
+    left: 100.5,
+    bottom: 55.5
   }
 }
