@@ -1,10 +1,84 @@
 /* pages/testResult/testResult.wxss */
-.page-testResult{
-  display: flex;
-  justify-content: center;
-  padding: 60rpx;
+.page-testResult {}
+
+.vmse-wtc {
+  position: absolute;
+  left: -10000rpx;
 }
 
-.result-image{
+.btn-group {
+  display: flex;
+}
 
+.vmse-bg {
+  padding: 44rpx 114rpx;
+}
+
+.vmse-content {
+  width: 562rpx;
+  height: 1021rpx;
+  box-shadow: 0rpx 4rpx 48rpx 0rpx rgba(183, 133, 133, 0.36);
+  border-radius: 10rpx;
+  border: 4rpx solid #FFFFFF;
+  position: relative;
+}
+
+.vmse-avatar {
+  position: absolute;
+  left: 60rpx;
+  top: 162rpx;
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 10rpx;
+  overflow: hidden;
+}
+
+.vmse-qrcode {
+  width: 120rpx;
+  height: 120rpx;
+  position: absolute;
+  left: 100.5rpx;
+  bottom: 25.5rpx;
+}
+
+.share-pannel {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-share {
+  width: 400rpx;
+  height: 80rpx;
+  background-color: #ffc9b3;
+  border-radius: 20rpx;
+  border: 2px solid #FFFFFF;
+  color: #FFFFFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15rpx;
+}
+
+.icon-lock {
+  width: 50rpx;
+  height: 50rpx;
+  background-image: url("https://alanngai1996.xyz/store/know-mind/assets/icon-lock.png");
+  background-repeat: no-repeat;
+  background-size: 80%;
+  background-position: center center;
+}
+
+.btn-save {
+  width: 400rpx;
+  height: 80rpx;
+  background-color: #ffc9b3;
+  border-radius: 20rpx;
+  border: 2px solid #FFFFFF;
+  color: #FFFFFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

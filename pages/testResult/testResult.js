@@ -1,20 +1,76 @@
 // pages/testResult/testResult.js
+import {
+  getWxml,
+  style
+} from './posterTemplate.js'
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    imageSrc: ""
+    src: "",
+    resultImage:"",
+    avatarUrl:"",
+    qrcodeUrl: "https://alanngai1996.xyz/store/know-mind/assets/knowMindQRcode.png",
+  },
+
+  extraImage() {
+    wx.showLoading({
+      title: '加载中',
+      mask: true
+    })
+
+    const p2 = this.widget.canvasToTempFilePath()
+    p2.then(res => {
+      this.setData({
+        src: res.tempFilePath
+      })
+      // wx.saveImageToPhotosAlbum({
+      //   filePath: res.tempFilePath,
+      //   success: () => {
+      //     wx.hideLoading()
+      //     wx.showToast({
+      //       title: '图片保存成功',
+      //       icon: 'none',
+      //       duration: 2000
+      //     })
+      //   }
+      // })
+    })
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    const {
+      resultImage,
+      avatarUrl
+    } = options;
+
     this.setData({
-      imageSrc: options.resultImage
+      resultImage,
+      avatarUrl
     })
+
+    this.widget = this.selectComponent('.widget');
+
+    // setTimeout(() => {
+    //   this.widget.renderToCanvas({
+    //     wxml: getWxml(resultImage, avatarUrl, this.data.qrcodeUrl),
+    //     style
+    //   }).then((res) => {
+    //     this.container = res
+    //   })
+    // }, 200)
+
+    // this.widget.canvasToTempFilePath().then(res => {
+    //   this.setData({
+    //     src: res.tempFilePath
+    //   })
+    // })
   },
 
   /**

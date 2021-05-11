@@ -220,98 +220,131 @@ const Test = [
         type: "ESTJ",
         query: "ESTJ",
         score_range: range(26),
-        img_src: `${sourceHost}/resultImages/personalColorCN/ESTJ.png`
+        img_src: `${sourceHost}/resultImages/personalColor/ESTJ.png`,
+        detail:[
+          {
+            title:"性格是？",
+            list: [
+              '是一个特别倔强而且很现实的人！能准确地辨别是非！',
+              '不想做领导人，但每次担当领导人物时又很胜任！工作能力特别强！',
+              '头脑聪慧，喜欢学习。很有眼色，善于交谈！好奇心强！',
+              '指导他人的欲望也很强！你是一个表里一致的人，有事儿就当面说清楚，当面不说背后也不会说的性格！',
+              '比起过程更重视结果！彻彻底底的工作狂！',
+              '比起情绪化，更倾向于仔细分析情况，然后客观地判断到底谁对谁错。',
+              '但是仅仅埋在心里，不会说出来！',
+              '会提前做好缜密的计划和准备工作，但一点儿都不会灵活处理问题！'
+            ]
+          },
+          {
+            title:"小心点！",
+            list:[
+              '如果对方不胜任工作，你就会很着急而且会变得很唠叨。',
+              '你认为胜任工作的人就是好人，工作效率低的人就是坏人！',
+              '不会安慰人…不轻易感到寂寞，所以理解不了寂寞的人。',
+              '最讨厌不守约的人、冲动的人、闪电般突然约你的人、打扰你私人时间的人。'
+            ]
+          },
+          {
+            title:"你和这类人比较合适",
+            list:[
+              '在工作上被表扬时你会很开心，所以喜欢懂得表扬对方的人。',
+              '懂得尊重人隐私，对自己担当的工作认真。',
+              '在他身上能学到很多的人！很照顾我的人！',
+              '但却不要求太多回报的人。'
+            ]
+          }
+        ]
       },
       {
         type: "ESTP",
         query: "ESTP",
         score_range: range(26, 51),
-        img_src: `${sourceHost}/resultImages/personalColorCN/ESTP.png`
+        img_src: `${sourceHost}/resultImages/personalColor/ESTP.png`
       },
       {
         type: "ESFJ",
         desc: `도비가 부러운 자유로운 영혼인, 웰시코기\n`,
         query: "ESFJ",
         score_range: range(51, 75),
-        img_src: `${sourceHost}/resultImages/personalColorCN/ESFJ.png`
+        img_src: `${sourceHost}/resultImages/personalColor/ESFJ.png`
       },
       {
         type: "ESFP",
         query: "ESFP",
         score_range: range(76, 101),
-        img_src: `${sourceHost}/resultImages/personalColorCN/ESFP.png`
+        img_src: `${sourceHost}/resultImages/personalColor/ESFP.png`
       },
       {
         type: "ENTJ",
         query: "ENTJ",
         score_range: range(76, 101),
-        img_src: `${sourceHost}/resultImages/personalColorCN/ENTJ.png`
+        img_src: `${sourceHost}/resultImages/personalColor/ENTJ.png`
       },
       {
         type: "ENTP",
         query: "ENTP",
         score_range: range(26),
-        img_src: `${sourceHost}/resultImages/personalColorCN/ENTP.png`
+        img_src: `${sourceHost}/resultImages/personalColor/ENTP.png`
       },
       {
         type: "ENFJ",
         query: "ENFJ",
         score_range: range(26, 51),
-        img_src: `${sourceHost}/resultImages/personalColorCN/ENFJ.png`
+        img_src: `${sourceHost}/resultImages/personalColor/ENFJ.png`
       },
       {
         type: "ENFP",
         query: "ENFP",
         score_range: range(51, 75),
-        img_src: `${sourceHost}/resultImages/personalColorCN/ENFP.png`
+        img_src: `${sourceHost}/resultImages/personalColor/ENFP.png`
       },
       {
         type: "ISTJ",
         query: "ISTJ",
         score_range: range(76, 101),
-        img_src: `${sourceHost}/resultImages/personalColorCN/ISTJ.png`
+        img_src: `${sourceHost}/resultImages/personalColor/ISTJ.png`
       },
       {
         type: "ISTP",
         query: "ISTP",
         score_range: range(76, 101),
-        img_src: `${sourceHost}/resultImages/personalColorCN/ISTP.png`
+        img_src: `${sourceHost}/resultImages/personalColor/ISTP.png`
       },
       {
         type: "ISFJ",
         query: "ISFJ",
         score_range: range(76, 101),
-        img_src: `${sourceHost}/resultImages/personalColorCN/ISFJ.png`
+        img_src: `${sourceHost}/resultImages/personalColor/ISFJ.png`
       },
       {
         type: "ISFP",
         query: "ISFP",
         score_range: range(26),
-        img_src: `${sourceHost}/resultImages/personalColorCN/ISFP.png`
+        img_src: `${sourceHost}/resultImages/personalColor/ISFP.png`
       },
       {
         type: "INTJ",
         query: "INTJ",
         score_range: range(26, 51),
-        img_src: `${sourceHost}/resultImages/personalColorCN/INTJ.png`
+        img_src: `${sourceHost}/resultImages/personalColor/INTJ.png`
       },
       {
         type: "INTP",
         query: "INTP",
         score_range: range(51, 75),
-        img_src: `${sourceHost}/resultImages/personalColorCN/INTP.png`
+        img_src: `${sourceHost}/resultImages/personalColor/INTP.png`
       },
       {
         type: "INFJ",
         query: "INFJ",
         score_range: range(76, 101),
-        img_src: `${sourceHost}/resultImages/personalColorCN/INFJ.png`
+        img_src: `${sourceHost}/resultImages/personalColor/INFJ.png`
       },
       {
         type: "INFP",
         query: "INFP",
         score_range: range(76, 101),
-        img_src: `${sourceHost}/resultImages/personalColorCN/INFP.png`
+        img_src: `${sourceHost}/resultImages/personalColor/INFP.png`
       },
     ]
   }

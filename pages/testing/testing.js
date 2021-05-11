@@ -16,7 +16,8 @@ Page({
     stepLength: 0, // 总步数，未初始化为0
     scoreType: "",
     questions: [],
-    disableClickNext: true
+    disableClickNext: true,
+    avatarUrl: ""
   },
 
   handleClickNext() {
@@ -92,11 +93,29 @@ Page({
     this.next();
   },
 
-  getResult(){
+  getUserInfo() {
+    wx.getUserProfile({
+      desc: '用于获取头像生成海报',
+      success: (res) => {
+        this.setData({
+          avatarUrl: res.userInfo.avatarUrl
+        })
+        this.getResult();
+      },
+      fail: ()=>{
+        wx.showModal({
+          title: '获取结果失败了喔',
+          content: '授权成功，才看到测试结果呢'
+        })
+      }
+    })
+  },
+
+  getResult() {
     const result = this.resultCaculator();
     console.log(result);
     wx.navigateTo({
-      url: `/pages/testResult/testResult?resultImage=${result.img_src}`
+      url: `/pages/testResult/testResult?resultImage=${result.img_src}&avatarUrl=${this.data.avatarUrl}`
     })
   },
 

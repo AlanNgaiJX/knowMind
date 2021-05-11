@@ -14,7 +14,7 @@ Page({
     hasUserInfo: false,
     avatarUrl: "",
     nickName: "",
-    qrcodeUrl: "https://muc0901.oss-cn-shenzhen.aliyuncs.com/customer/42/wxcode.png",
+    qrcodeUrl: "https://alanngai1996.xyz/store/know-mind/assets/knowMindQRcode.png",
     widget: null,
     showPoster: false,
     src:""

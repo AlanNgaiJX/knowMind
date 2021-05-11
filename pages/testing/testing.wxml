@@ -22,7 +22,7 @@
     </step-counter>
   </view>
   <view class="submit-wrap" hidden="{{!testEnd}}">
-    <button class="btn-submit" bind:tap="getResult">
+    <button class="btn-submit" open-type="getUserInfo" bind:tap="getUserInfo">
       测试结果
     </button>
   </view>

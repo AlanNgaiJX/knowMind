@@ -1,4 +1,32 @@
 <!--pages/testResult/testResult.wxml-->
 <view class="page-testResult">
-  <image class="result-image" mode="widthFix" src="{{imageSrc}}"></image>
+  <view class="vmse-bg" style="padding-top: {{navH}}px">
+    <view class="vmse-content" style="background: url({{resultImage}}) no-repeat; background-size: 100% 100%;">
+      <view class="vmse-avatar">
+        <image style="width: 100rpx; height: 100rpx;" mode="scaleToFill" src="{{avatarUrl}}" />
+      </view>
+      <view class="vmse-qrcode">
+        <image style="width: 88.5rpx; height: 88.5rpx;" mode="scaleToFill" src="{{qrcodeUrl}}" />
+      </view>
+    </view>
+  </view>
+
+  <!-- 海报生成器 -->
+  <view class="vmse-wtc">
+    <wxml-to-canvas class="widget" width="562" height="1021"></wxml-to-canvas>
+  </view>
+
+  <!-- 分享 -->
+  <view class="share-pannel">
+    <view class="btn-save">
+      <text>保存图片，分享朋友圈</text>
+    </view>
+    <view class="btn-share">
+      <text>分享后解锁更多</text>
+      <view class="icon-lock"></view>
+    </view>
+  </view>
+
+  <!-- 更多解读 -->
+  <view class="more"></view>
 </view>

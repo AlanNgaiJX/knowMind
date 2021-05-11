@@ -1,8 +1,11 @@
 /**app.wxss**/
+page{
+  background-color: #FFFAF7;
+}
+
 .container {
   color: #333333;
   height: 100vh;
-  background-color: #FFFAF7;
 } 
 
 @keyframes scaleOutIn{
