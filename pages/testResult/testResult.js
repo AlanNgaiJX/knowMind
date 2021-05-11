@@ -3,7 +3,7 @@ import {
   getWxml,
   style
 } from './posterTemplate.js'
-
+const TEST = require("../../config/TEST.js");
 Page({
 
   /**
@@ -11,7 +11,7 @@ Page({
    */
   data: {
     src: "",
-    resultImage:"",
+    result: null,
     avatarUrl:"",
     qrcodeUrl: "https://alanngai1996.xyz/store/know-mind/assets/knowMindQRcode.png",
   },
@@ -46,12 +46,14 @@ Page({
    */
   onLoad: function (options) {
     const {
-      resultImage,
+      resultType,
       avatarUrl
     } = options;
 
+    const result = TEST[0].results.find(item=>item.type === resultType);
+
     this.setData({
-      resultImage,
+      result,
       avatarUrl
     })
 

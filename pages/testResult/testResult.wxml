@@ -1,7 +1,7 @@
 <!--pages/testResult/testResult.wxml-->
 <view class="page-testResult">
   <view class="vmse-bg" style="padding-top: {{navH}}px">
-    <view class="vmse-content" style="background: url({{resultImage}}) no-repeat; background-size: 100% 100%;">
+    <view class="vmse-content" style="background: url({{result.img_src}}) no-repeat; background-size: 100% 100%;">
       <view class="vmse-avatar">
         <image style="width: 100rpx; height: 100rpx;" mode="scaleToFill" src="{{avatarUrl}}" />
       </view>
@@ -28,5 +28,15 @@
   </view>
 
   <!-- 更多解读 -->
-  <view class="more"></view>
+  <view class="more">
+    <view wx:for="{{result.detail}}" wx:key="unique" wx:for-item="subjectItem" class="subject">
+      <view class="title">{{subjectItem.title}}</view>
+      <view class="p-wrap" wx:for="{{subjectItem.list}}" wx:key="unique" wx:for-item="p">
+        <view class="label"></view>
+        <view class="p">
+          {{p}}
+        </view>
+      </view>
+    </view>
+  </view>
 </view>

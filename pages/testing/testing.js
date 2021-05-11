@@ -113,9 +113,8 @@ Page({
 
   getResult() {
     const result = this.resultCaculator();
-    console.log(result);
     wx.navigateTo({
-      url: `/pages/testResult/testResult?resultImage=${result.img_src}&avatarUrl=${this.data.avatarUrl}`
+      url: `/pages/testResult/testResult?resultType=${result.type}&avatarUrl=${this.data.avatarUrl}`
     })
   },
 
