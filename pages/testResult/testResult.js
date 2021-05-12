@@ -14,6 +14,8 @@ Page({
     result: null,
     avatarUrl:"",
     qrcodeUrl: "https://alanngai1996.xyz/store/know-mind/assets/knowMindQRcode.png",
+    hideShade: false,
+    shareSingleCount: 0
   },
 
   extraImage() {
@@ -27,18 +29,29 @@ Page({
       this.setData({
         src: res.tempFilePath
       })
-      // wx.saveImageToPhotosAlbum({
-      //   filePath: res.tempFilePath,
-      //   success: () => {
-      //     wx.hideLoading()
-      //     wx.showToast({
-      //       title: '图片保存成功',
-      //       icon: 'none',
-      //       duration: 2000
-      //     })
-      //   }
-      // })
+      wx.saveImageToPhotosAlbum({
+        filePath: res.tempFilePath,
+        success: () => {
+          wx.hideLoading()
+          wx.showToast({
+            title: '图片保存成功',
+            icon: 'none',
+            duration: 2000
+          })
+        }
+      })
     })
+  },
+
+  shareSingle(){
+    this.setData({
+      shareSingleCount: this.data.shareSingleCount + 1
+    })
+    if (this.data.shareSingleCount >=2 ) {
+      this.setData({
+        hideShade: true
+      })
+    }
   },
 
   /**
@@ -59,20 +72,14 @@ Page({
 
     this.widget = this.selectComponent('.widget');
 
-    // setTimeout(() => {
-    //   this.widget.renderToCanvas({
-    //     wxml: getWxml(resultImage, avatarUrl, this.data.qrcodeUrl),
-    //     style
-    //   }).then((res) => {
-    //     this.container = res
-    //   })
-    // }, 200)
-
-    // this.widget.canvasToTempFilePath().then(res => {
-    //   this.setData({
-    //     src: res.tempFilePath
-    //   })
-    // })
+    setTimeout(() => {
+      this.widget.renderToCanvas({
+        wxml: getWxml(result.img_src, avatarUrl, this.data.qrcodeUrl),
+        style
+      }).then((res) => {
+        this.container = res
+      })
+    }, 1000)
   },
 
   /**

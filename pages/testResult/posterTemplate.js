@@ -2,14 +2,13 @@ export const getWxml = (bg, avatar, qr) => {
   return `
   <view class="container">
     <image class="bg" src="${bg}"></image>
-    <image class="avatar"  src="${avatar}"></image>
+    <image class="avatar"  src="${qr}"></image>
     <image class="qr" src="${qr}" ></image>
-  </view>
+  </view>s
   `
 }
 export const style = {
   container: {
-    backgroundColor: "red",
     width: 562,
     height: 1021,
     position: "relative"

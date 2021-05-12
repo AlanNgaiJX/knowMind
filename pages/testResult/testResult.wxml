@@ -18,23 +18,32 @@
 
   <!-- 分享 -->
   <view class="share-pannel">
-    <view class="btn-save">
+    <button class="btn-save" bindtap="extraImage">
       <text>保存图片，分享朋友圈</text>
-    </view>
-    <view class="btn-share">
-      <text>分享后解锁更多</text>
+    </button>
+    <button class="btn-share" bindtap="shareSingle" open-type="share">
+      <text wx:if="{{shareSingleCount===0}}">分享后解锁更多解读</text>
+      <text wx:if="{{shareSingleCount===1}}">再分享1个好友解锁</text>
+      <text wx:if="{{shareSingleCount>1}}">已解锁，继续分享好友</text>
       <view class="icon-lock"></view>
-    </view>
+    </button>
   </view>
 
   <!-- 更多解读 -->
   <view class="more">
-    <view wx:for="{{result.detail}}" wx:key="unique" wx:for-item="subjectItem" class="subject">
-      <view class="title">{{subjectItem.title}}</view>
-      <view class="p-wrap" wx:for="{{subjectItem.list}}" wx:key="unique" wx:for-item="p">
-        <view class="label"></view>
-        <view class="p">
-          {{p}}
+    <view class="shade" wx:if="{{!hideShade}}">
+      <view class="lock-wrap">
+        <view class="lock"></view>
+      </view>
+    </view>
+    <view class="more-content">
+      <view wx:for="{{result.detail}}" wx:key="unique" wx:for-item="subjectItem" class="subject">
+        <view class="title">{{subjectItem.title}}</view>
+        <view class="p-wrap" wx:for="{{subjectItem.list}}" wx:key="unique" wx:for-item="p">
+          <view class="label"></view>
+          <view class="p">
+            {{p}}
+          </view>
         </view>
       </view>
     </view>

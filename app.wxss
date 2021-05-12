@@ -1,23 +1,43 @@
 /**app.wxss**/
-page{
+page {
   background-color: #FFFAF7;
 }
 
 .container {
   color: #333333;
   height: 100vh;
-} 
+}
 
-@keyframes scaleOutIn{
-  0%{
+@keyframes scaleOutIn {
+  0% {
     transform: scale(1);
   }
 
-  50%{
+  50% {
     transform: scale(1.2);
   }
 
-  100%{
+  100% {
     transform: scale(1);
   }
+}
+
+button {
+  margin: 0;
+  padding: 0;
+  background-color: rgba(0, 0, 0, 0);
+  line-height: inherit;
+  border-radius: 0;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button::after {
+  border: none;
+}
+
+.button-hover {
+  background-color: rgba(0, 0, 0, 0);
 }
