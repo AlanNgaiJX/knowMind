@@ -48,4 +48,6 @@
       </view>
     </view>
   </view>
+
+  <image src="{{src}}" mode="widthFix"></image>
 </view>

@@ -2,7 +2,7 @@ export const getWxml = (bg, avatar, qr) => {
   return `
   <view class="container">
     <image class="bg" src="${bg}"></image>
-    <image class="avatar"  src="${qr}"></image>
+    <image class="avatar"  src="${avatar}"></image>
     <image class="qr" src="${qr}" ></image>
   </view>s
   `

@@ -15,7 +15,7 @@ Page({
     avatarUrl:"",
     qrcodeUrl: "https://alanngai1996.xyz/store/know-mind/assets/knowMindQRcode.png",
     hideShade: false,
-    shareSingleCount: 0
+    shareSingleCount: 0,
   },
 
   extraImage() {
@@ -63,6 +63,8 @@ Page({
       avatarUrl
     } = options;
 
+    console.log(resultType);
+    console.log(avatarUrl);
     const result = TEST[0].results.find(item=>item.type === resultType);
 
     this.setData({

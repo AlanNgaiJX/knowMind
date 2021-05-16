@@ -62,7 +62,7 @@
 }
 
 .btn-submit{
-  width: 210rpx;
+  width: 300rpx;
   height: 101rpx;
   color: #333333;
   display: flex;
