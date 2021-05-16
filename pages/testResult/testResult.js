@@ -12,42 +12,62 @@ Page({
   data: {
     src: "",
     result: null,
-    avatarUrl:"",
+    avatarUrl: "",
     qrcodeUrl: "https://alanngai1996.xyz/store/know-mind/assets/knowMindQRcode.png",
     hideShade: false,
     shareSingleCount: 0,
   },
 
   extraImage() {
-    wx.showLoading({
-      title: '加载中',
-      mask: true
-    })
 
-    const p2 = this.widget.canvasToTempFilePath()
-    p2.then(res => {
-      this.setData({
-        src: res.tempFilePath
-      })
-      wx.saveImageToPhotosAlbum({
-        filePath: res.tempFilePath,
-        success: () => {
-          wx.hideLoading()
-          wx.showToast({
-            title: '图片保存成功',
-            icon: 'none',
-            duration: 2000
+    wx.getSetting({
+      success: (res) =>{
+        if (!res.authSetting['scope.record']) {
+          wx.authorize({
+            scope: 'scope.writePhotosAlbum',
+            success: () =>{
+
+              wx.showLoading({
+                title: '加载中',
+                mask: true
+              })
+
+              const p2 = this.widget.canvasToTempFilePath()
+              p2.then(res => {
+                this.setData({
+                  src: res.tempFilePath
+                })
+                wx.saveImageToPhotosAlbum({
+                  filePath: res.tempFilePath,
+                  success: () => {
+                    wx.hideLoading()
+                    wx.showToast({
+                      title: '图片保存成功',
+                      icon: 'none',
+                      duration: 2000
+                    })
+                  }
+                })
+              })
+            },
+            fail() {
+              wx.showToast({
+                title: '保存需要先开启权限',
+                icon: 'none',
+                duration: 2000
+              })
+            }
           })
         }
-      })
+      }
     })
   },
 
-  shareSingle(){
+  shareSingle() {
     this.setData({
       shareSingleCount: this.data.shareSingleCount + 1
     })
-    if (this.data.shareSingleCount >=2 ) {
+    if (this.data.shareSingleCount >= 2) {
       this.setData({
         hideShade: true
       })
@@ -65,7 +85,7 @@ Page({
 
     console.log(resultType);
     console.log(avatarUrl);
-    const result = TEST[0].results.find(item=>item.type === resultType);
+    const result = TEST[0].results.find(item => item.type === resultType);
 
     this.setData({
       result,
@@ -81,7 +101,7 @@ Page({
       }).then((res) => {
         this.container = res
       })
-    }, 1000)
+    }, 5000)
   },
 
   /**

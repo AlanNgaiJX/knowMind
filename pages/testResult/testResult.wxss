@@ -3,7 +3,7 @@
 
 .vmse-wtc {
   position: absolute;
-  left: -10000rpx;
+  /* left: -10000rpx; */
   top: 0;
 }
 
