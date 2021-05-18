@@ -122,6 +122,11 @@ Page({
     if (this.data.scoreType === "typeCountingMBTI") {
       const final_result_obj = this.data.answer_type_obj;
 
+      this.data.questions.forEach(question=>{
+        const target = question.answers.find(item=> item.selected === true);
+        final_result_obj[target.type] = final_result_obj[target.type] + 1;
+      })
+
       // for creating an array which contains VS between types ex.["EI", "SN", "TF", "JP"]
       const _which_type_arr = this.data.questions.map((item) => {
         return item.which
@@ -177,7 +182,6 @@ Page({
         _answer_type_obj[currTest.questions[i].answers[j].type] = 0;
       }
     }
-
     this.setData({
       stepLength: currTest.questions.length,
       scoreType: currTest.info.scoreType,
