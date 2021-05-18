@@ -4,6 +4,7 @@ import {
   style
 } from './posterTemplate.js'
 const TEST = require("../../config/TEST.js");
+let timer;
 Page({
 
   /**
@@ -19,59 +20,81 @@ Page({
   },
 
   extraImage() {
-
+    wx.showLoading({
+      title: '保存中...',
+      mask: true
+    })
     wx.getSetting({
-      success: (res) =>{
-        if (!res.authSetting['scope.record']) {
-          wx.authorize({
-            scope: 'scope.writePhotosAlbum',
-            success: () =>{
-
-              wx.showLoading({
-                title: '加载中',
-                mask: true
+      success: (res) => {
+        var auth = res.authSetting
+        if (auth) {
+          if (auth['scope.writePhotosAlbum'] == true) {
+            const p2 = this.widget.canvasToTempFilePath()
+            p2.then(res => {
+              wx.saveImageToPhotosAlbum({
+                filePath: res.tempFilePath,
+                success: () => {
+                  wx.hideLoading()
+                  wx.showToast({
+                    title: '图片保存成功',
+                    icon: 'none',
+                    duration: 2000
+                  })
+                },
+                fail: () => {
+                  wx.hideLoading()
+                }
               })
-
-              const p2 = this.widget.canvasToTempFilePath()
-              p2.then(res => {
-                this.setData({
-                  src: res.tempFilePath
-                })
-                wx.saveImageToPhotosAlbum({
-                  filePath: res.tempFilePath,
-                  success: () => {
-                    wx.hideLoading()
-                    wx.showToast({
-                      title: '图片保存成功',
-                      icon: 'none',
-                      duration: 2000
-                    })
-                  }
-                })
-              })
-            },
-            fail() {
-              wx.showToast({
-                title: '保存需要先开启权限',
-                icon: 'none',
-                duration: 2000
-              })
-            }
-          })
+            })
+            return;
+          }
+          if (auth['scope.writePhotosAlbum'] == false) {
+            wx.hideLoading()
+            wx.showModal({
+              title: '温馨提示',
+              confirmText: '确认',
+              content: '请打开相册授权哦',
+              success: (res) => {
+                if (res.confirm) {
+                  wx.openSetting({
+                    success: (res) => {
+                      this.extraImage()
+                    }
+                  })
+                }
+              }
+            })
+          } else {
+            wx.hideLoading()
+            wx.authorize({
+              scope: 'scope.writePhotosAlbum',
+              success: () => {
+                console.log('kskks')
+                // 用户已经同意小程序使用录音功能，后续调用 wx.startRecord 接口不会弹窗询问
+                this.extraImage()
+              }
+            })
+          }
         }
+
+      },
+      fail: () => {
+        wx.hideLoading()
       }
     })
   },
 
   shareSingle() {
-    this.setData({
-      shareSingleCount: this.data.shareSingleCount + 1
-    })
-    if (this.data.shareSingleCount >= 2) {
+    setTimeout(() => {
       this.setData({
-        hideShade: true
+        shareSingleCount: this.data.shareSingleCount + 1
       })
-    }
+      if (this.data.shareSingleCount >= 2) {
+        this.setData({
+          hideShade: true
+        })
+      }
+    }, 1000);
   },
 
   /**
@@ -83,32 +106,37 @@ Page({
       avatarUrl
     } = options;
 
-    console.log(resultType);
-    console.log(avatarUrl);
     const result = TEST[0].results.find(item => item.type === resultType);
 
     this.setData({
       result,
       avatarUrl
     })
-
-    this.widget = this.selectComponent('.widget');
-
-    setTimeout(() => {
-      this.widget.renderToCanvas({
-        wxml: getWxml(result.img_src, avatarUrl, this.data.qrcodeUrl),
-        style
-      }).then((res) => {
-        this.container = res
-      })
-    }, 5000)
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    this.widget = this.selectComponent('.widget');
+    const {
+      result,
+      avatarUrl,
+      qrcodeUrl
+    } = this.data;
+    setTimeout(() => {
+      wx.showLoading({
+        title: '加载中...',
+        mask: true
+      })
+      this.widget.renderToCanvas({
+        wxml: getWxml(result.img_src, avatarUrl, qrcodeUrl),
+        style
+      }).then((res) => {
+        wx.hideLoading()
+        this.container = res
+      })
+    }, 200)
   },
 
   /**

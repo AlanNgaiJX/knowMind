@@ -77,4 +77,5 @@
   letter-spacing: 3rpx;
   background: url("https://alanngai1996.xyz/store/know-mind/assets/btn-3d-pink.png") no-repeat center;
   background-size: contain;
+  font-weight: 500;
 }

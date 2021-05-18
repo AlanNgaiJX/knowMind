@@ -4,7 +4,7 @@
     "ignore": []
   },
   "setting": {
-    "urlCheck": false,
+    "urlCheck": true,
     "es6": true,
     "enhance": true,
     "postcss": true,
@@ -41,7 +41,7 @@
   },
   "compileType": "miniprogram",
   "libVersion": "2.17.0",
-  "appid": "wx8ede23157971b5bf",
+  "appid": "wx87440d476657ec5e",
   "projectname": "knowMind",
   "debugOptions": {
     "hidedInDevtools": []

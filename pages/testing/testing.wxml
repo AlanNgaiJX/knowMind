@@ -1,6 +1,6 @@
 <!--pages/testing/testing.wxml-->
 <view class="page-testing container">
-  <swiper class="swiper" current="{{currStep - 1}}">
+  <swiper class="swiper" current="{{currStep - 1}}" duration="300">
     <block wx:for="{{questions}}" wx:for-item="questionItem" wx:for-index="questionIndex" wx:key="questionIndex">
       <swiper-item class="swiper-item" catch:touchmove="stopTouchMove">
         <view class="question">

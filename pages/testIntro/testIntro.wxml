@@ -1,6 +1,0 @@
-<!--pages/testIntro/testIntro.wxml-->
-<view class="page-testIntro">
-  <view class="intro-banner">
-    <image mode="widthFix" class="banner-image" src="https://alanngaijx.xyz/assets/know-mind/introImages/personalColorCN-intro.png"></image>
-  </view>
-</view>
