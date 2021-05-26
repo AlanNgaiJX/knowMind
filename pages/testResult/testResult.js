@@ -17,6 +17,7 @@ Page({
     qrcodeUrl: "https://alanngai1996.xyz/store/know-mind/assets/knowMindQRcode.png",
     hideShade: false,
     shareSingleCount: 0,
+    fromShare: false
   },
 
   extraImage() {
@@ -97,46 +98,62 @@ Page({
     }, 1000);
   },
 
+  toIndex(){
+    wx.navigateTo({
+      url: '/pages/index/index',
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     const {
       resultType,
-      avatarUrl
+      avatarUrl,
+      fromShare
     } = options;
 
     const result = TEST[0].results.find(item => item.type === resultType);
 
     this.setData({
       result,
-      avatarUrl
+      avatarUrl,
+      fromShare
     })
+
+    if (fromShare) {
+      this.setData({
+        hideShade: true
+      })
+    }
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    this.widget = this.selectComponent('.widget');
-    const {
-      result,
-      avatarUrl,
-      qrcodeUrl
-    } = this.data;
-    setTimeout(() => {
-      wx.showLoading({
-        title: '加载中...',
-        mask: true
-      })
-      this.widget.renderToCanvas({
-        wxml: getWxml(result.img_src, avatarUrl, qrcodeUrl),
-        style
-      }).then((res) => {
-        wx.hideLoading()
-        this.container = res
-      })
-    }, 200)
+    if (!this.data.fromShare) {
+      this.widget = this.selectComponent('.widget');
+      const {
+        result,
+        avatarUrl,
+        qrcodeUrl
+      } = this.data;
+      setTimeout(() => {
+        wx.showLoading({
+          title: '加载中...',
+          mask: true
+        })
+        this.widget.renderToCanvas({
+          wxml: getWxml(result.img_src, avatarUrl, qrcodeUrl),
+          style
+        }).then((res) => {
+          wx.hideLoading()
+          this.container = res
+        })
+      }, 200)
+    }
   },
 
   /**
@@ -177,7 +194,10 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
-
+  onShareAppMessage() {
+    return {
+      title: '超准的颜色性格测试，你也快点来试试 ~',
+      path: `/pages/testResult/testResult?resultType=${this.data.result.type}&avatarUrl=${this.data.avatarUrl}&fromShare=true`,
+    }
   }
 })

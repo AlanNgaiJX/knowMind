@@ -17,7 +17,7 @@
   </view>
 
   <!-- 分享 -->
-  <view class="share-pannel">
+  <view class="share-pannel" wx:if="{{!fromShare}}">
     <button class="btn-save" bindtap="extraImage">
       <text>保存图片，分享朋友圈</text>
     </button>
@@ -47,6 +47,11 @@
         </view>
       </view>
     </view>
+  </view>
+
+    <!-- 我也测测 -->
+    <view class="test-pannel" wx:if="{{fromShare}}">
+    <view class="btn-test" bind:tap="toIndex">我也测测</view>
   </view>
 
   <image src="{{src}}" mode="widthFix"></image>

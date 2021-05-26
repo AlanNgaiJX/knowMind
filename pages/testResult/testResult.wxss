@@ -11,7 +11,9 @@
 }
 
 .vmse-bg {
-  padding: 44rpx 114rpx;
+  padding-top: 44rpx;
+  display: flex;
+  justify-content: center;
 }
 
 .vmse-content {
@@ -47,6 +49,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 44rpx;
 }
 
 .btn-share {
@@ -184,4 +187,26 @@
 .p-wrap .p {
   padding-left: 40rpx;
   color: #666;
+}
+
+.test-pannel{
+  display: flex;
+  justify-content: center;
+}
+
+.btn-test{
+  width: 210rpx;
+  height: 101rpx;
+  background: url("https://alanngai1996.xyz/store/know-mind/assets/btn-3d-pink.png") no-repeat center;
+  background-size: contain;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28rpx;
+  color: #333333;
+  letter-spacing: 3rpx;
+  font-weight: 500;
+  animation-name: scaleOutIn;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
 }
